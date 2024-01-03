@@ -225,9 +225,12 @@ function render_uploaded() {
 		var wpcfurl = resp.data.thumb == null ? WPCFRAW + resp.data.url : WPCFRAW + resp.data.thumb.url;
         var RAW = resp.data.thumb == null ? PhRAW + resp.data.url : PhRAW + resp.data.thumb.url;
         $('#imagedetail').append(formatHtml({ url: url, code: url, wp: wpurl, wpcf: wpcfurl, raw: RAW }));
-        $('#htmlcode').append(formatHtml({ url: url, code: '<img src="' + url + '" />', wp: '<img src="' + wpurl + '" />', wpcf: '<img src="' + wpcfurl + '" />', raw: '<img src="' + RAW + '" />' }));
-        $('#bbcode').append(formatHtml({ url: url, code: '[img]' + url + '[/img]', wp: '[img]' + wpurl + '[/img]' , wpcf: '[img]' + wpcfurl + '[/img]' , raw: '[img]' + RAW + '[/img]' }));
-        $('#markdown').append(formatHtml({ url: url, code: '![' + name + '](' + url + ')', wp: '![' + name + '](' + wpurl + ')', wpcf: '![' + name + '](' + wpcfurl + ')', raw: '![' + name + '](' + RAW + ')' }));
+        $('#htmlcode').append(formatHtml({ url: url, code: '<img src="' + url + '" />', raw: '<img src="' + RAW + '" />' }));
+	// wp: '<img src="' + wpurl + '" />', wpcf: '<img src="' + wpcfurl + '" />',暂未添加
+        $('#bbcode').append(formatHtml({ url: url, code: '[img]' + url + '[/img]',  raw: '[img]' + RAW + '[/img]' }));
+	// wp: '[img]' + wpurl + '[/img]' , wpcf: '[img]' + wpcfurl + '[/img]' ,暂未添加
+        $('#markdown').append(formatHtml({ url: url, code: '![' + name + '](' + url + ')', raw: '![' + name + '](' + RAW + ')' }));
+	// wp: '![' + name + '](' + wpurl + ')', wpcf: '![' + name + '](' + wpcfurl + ')', 暂未添加
     });
 }
 
