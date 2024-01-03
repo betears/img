@@ -221,8 +221,8 @@ function render_uploaded() {
         const BASE_PROXYURL = PROXYURL ? PROXYURL : BASE_URL;
         
         var url = resp.data.thumb == null ? BASE_PROXYURL + resp.data.url : BASE_PROXYURL + resp.data.thumb.url;
-        var wpurl = resp.data.thumb == null ? WPRAW + resp.data.url : WPRAW + resp.data.thumb.url;
-		var wpcfurl = resp.data.thumb == null ? WPCFRAW + resp.data.url : WPCFRAW + resp.data.thumb.url;
+        // var wpurl = resp.data.thumb == null ? WPRAW + resp.data.url : WPRAW + resp.data.thumb.url;
+	// var wpcfurl = resp.data.thumb == null ? WPCFRAW + resp.data.url : WPCFRAW + resp.data.thumb.url;
         var RAW = resp.data.thumb == null ? PhRAW + resp.data.url : PhRAW + resp.data.thumb.url;
         $('#imagedetail').append(formatHtml({ url: url, code: url, wp: wpurl, wpcf: wpcfurl, raw: RAW }));
         $('#htmlcode').append(formatHtml({ url: url, code: '<img src="' + url + '" />', raw: '<img src="' + RAW + '" />' }));
